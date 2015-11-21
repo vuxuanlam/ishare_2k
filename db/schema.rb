@@ -11,7 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151005075908) do
+ActiveRecord::Schema.define(version: 20151102070621) do
+
+  create_table "friends", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "friend_id"
+    t.boolean  "accepted"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "friends", ["friend_id"], name: "index_friends_on_friend_id"
+
+  create_table "goal_manages", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "word_number"
+    t.integer  "learned_word"
+    t.datetime "start_at"
+    t.datetime "deadline"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "user_logs", force: :cascade do |t|
     t.integer  "user_id"
@@ -37,6 +57,9 @@ ActiveRecord::Schema.define(version: 20151005075908) do
     t.string   "unconfirmed_email"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "name"
+    t.string   "gender"
+    t.integer  "age"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
