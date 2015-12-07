@@ -1,3 +1,5 @@
+B チーム：
+
 - GITHUBのアカウント名 : anhtuyen1512
 - あなたの名前 : Nguyen Anh Tuyen
 
