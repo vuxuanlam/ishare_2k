@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
+  resources :answers
   resources :questions
   resources :user_logs
+  #   resources :questions do
+  #   resources :answers
+  # end
   root 'static_pages#home'
 
   get '/404' => 'ask_questions#404'
