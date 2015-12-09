@@ -33,16 +33,6 @@ ActiveRecord::Schema.define(version: 20151207062301) do
 
   add_index "friends", ["friend_id"], name: "index_friends_on_friend_id"
 
-  create_table "goal_manages", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "word_number"
-    t.integer  "learned_word"
-    t.datetime "start_at"
-    t.datetime "deadline"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
   create_table "questions", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
